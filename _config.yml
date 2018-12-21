@@ -1,0 +1,18 @@
+title: Long's github blog
+author: Long Wang
+email: wangl-cc@outlook.com
+description: >
+  A website belongs to long for sharing some ideas.
+  Thanks for your visit.
+
+url: wangl-cc.github.io
+
+# social links
+github_username:  wangl-cc
+
+show_excerpts: false # set to false to remove excerpts on the homepage
+
+markdown: kramdown
+
+plugins:
+ - jekyll-seo-tag
