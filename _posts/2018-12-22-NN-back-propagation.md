@@ -5,7 +5,7 @@ author: Long
 title:  "The derivation of back propagation equation"
 ---
 
-Following the Nielsen's book--["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/), I written a [feedforward neural network](https://github.com/wangl-cc/NeuralNetwork.jl) with julia to recognize handwritten digits in MNIST data, where I use the pkg--[JuliaDiff/ForwardDiff.jl](https://github.com/JuliaDiff/ForwardDiff.jl) to support different loss function but it doesn't work on activation function because there are something wrong to calculate the derivative of sigmoid function. Here I'd like to share my The derivation of back propagation equation. All formulas in this article follow Einstein summation convention, which means that any repeated indices except $l$ implies summation of that term over all the values of the index.
+Following the Nielsen's book--["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/), I wrote a [feedforward neural network](https://github.com/wangl-cc/NeuralNetwork.jl) with julia to recognize handwritten digits in MNIST data, where I use the pkg--[JuliaDiff/ForwardDiff.jl](https://github.com/JuliaDiff/ForwardDiff.jl) to support different loss function but it doesn't work on activation function because there are something wrong to calculate the derivative of sigmoid function. Here I'd like to share my The derivation of back propagation equation. All formulas in this article follow Einstein summation convention, which means that any repeated indices except $l$ implies summation of that term over all the values of the index.
 
 What is an neural network? Instead of the author of "NNDL" who think the network as a gate circuit, in my opinion the network is a series of linear regression:
 
