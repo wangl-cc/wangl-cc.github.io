@@ -5,7 +5,7 @@ author: Long
 title:  "Derivation of back propagation equation"
 ---
 
-Following the Nielsen's book--["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/), I wrote a [feedforward neural network](https://github.com/wangl-cc/NeuralNetwork.jl) with julia to recognize handwritten digits in MNIST data, where I use the pkg--[JuliaDiff/ForwardDiff.jl](https://github.com/JuliaDiff/ForwardDiff.jl) to support different loss function but it doesn't work on activation function because there are something wrong to calculate the derivative of sigmoid function. Here I'd like to share my derivation of back propagation equation. All tensor (vector, matrix and any other tensor of higher rank) in this article follow the [Einstein notation](https://en.wikipedia.org/wiki/Einstein_notation), which means that any repeated indices except $l$(which not means a rank in our tensor but its label, so the superscripts is labels and subscrpts is indices.) implies summation of that term over all the values of the index ,and the $\delta_{ij}$ is a tensor we called [Kronecker delta](https://en.wikipedia.org/wiki/Kronecker_delta) which have properties:$\frac{\partial x_j}{\partial y_i} = \delta_{ij}= \delta_{ij}$ and $\delta_{ij}x_j = \delta_i$.
+Following the Nielsen's book--["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/), I wrote a [feedforward neural network](https://github.com/wangl-cc/NeuralNetwork.jl) with julia to recognize handwritten digits in MNIST data, where I use the pkg--[JuliaDiff/ForwardDiff.jl](https://github.com/JuliaDiff/ForwardDiff.jl) to support different loss function but it doesn't work on activation function because there are something wrong to calculate the derivative of sigmoid function. Here I'd like to share my derivation of back propagation equation. All tensor (vector, matrix and any other tensor of higher rank) in this article follow the [Einstein notation](https://en.wikipedia.org/wiki/Einstein_notation), which means that any repeated indices except $l$ (which not means a rank in our tensor but its label, so the superscripts is labels and subscrpts is indices.) implies summation of that term over all the values of the index ,and the $\delta_{ij}$ is a tensor we called [Kronecker delta](https://en.wikipedia.org/wiki/Kronecker_delta) which have properties:$\frac{\partial x_j}{\partial x_i} = \delta_{ij}= \delta_{ij}$ and $\delta_{ij}x_j = \delta_i$.
 
 What is an neural network? Instead of the author of "NNDL" who think the network as a gate circuit, in my opinion the network is a series of linear regression:
 
@@ -49,7 +49,7 @@ $$
 \tag{2}\label{2}
 $$
 
-Form the equation ($\ref{b1}$, $\eqref{b2}$), we infer
+Form the equation $\eqref{b1}$, $\eqref{b2}$, we infer
 
 $$
 \begin{aligned}
@@ -59,4 +59,4 @@ $$
 \tag{3}\label{3}
 $$
 
-With the four equation ($\ref{1}$, $\ref{2}$, $\ref{3}$), we can calculate the gradient of $W$ and $b$. In the equation $\eqref{3}$, we can see the degree of freedom is overrated. This is why the back propagation algorithm is a fast algorithm.
+With the four equation $\eqref{1}$, $\eqref{2}$, $\ref{3}$, we can calculate the gradient of $W$ and $b$. In the equation $\eqref{3}$, we can see the degree of freedom is overrated. This is why the back propagation algorithm is a fast algorithm.
