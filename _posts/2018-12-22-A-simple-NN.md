@@ -2,10 +2,10 @@
 layout: post
 mathjax: true
 author: Long
-title:  "A basic feedforward neural network"
+title:  "The derivation of back propagation equation"
 ---
 
-Following the Nielsen's book--["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/), I written a [feedforward neural network](https://github.com/wangl-cc/NeuralNetwork.jl) with julia to recognize handwritten digits in MNIST data, where I use the pkg--[JuliaDiff/ForwardDiff.jl](https://github.com/JuliaDiff/ForwardDiff.jl) to support different loss function but it doesn't work on activation function because there are something wrong to calculate the derivative of sigmoid function. Here I'd like to share my own thoughts of FNN. All formulas in this article follow Einstein summation convention, which means that any repeated indices except $l$ implies summation of that term over all the values of the index.
+Following the Nielsen's book--["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/), I written a [feedforward neural network](https://github.com/wangl-cc/NeuralNetwork.jl) with julia to recognize handwritten digits in MNIST data, where I use the pkg--[JuliaDiff/ForwardDiff.jl](https://github.com/JuliaDiff/ForwardDiff.jl) to support different loss function but it doesn't work on activation function because there are something wrong to calculate the derivative of sigmoid function. Here I'd like to share my The derivation of back propagation equation. All formulas in this article follow Einstein summation convention, which means that any repeated indices except $l$ implies summation of that term over all the values of the index.
 
 What is an neural network? Instead of the author of "NNDL" who think the network as a gate circuit, in my opinion the network is a series of linear regression:
 
@@ -29,11 +29,11 @@ The $a^l_i$ is the output of $l$th layer's $i$th neuron and the $z^l_i$ is the i
 
 In the training of network, how to calculate the gradient of $W$ and $b$ is difficult problem. One of the solutions called back propagation algorithm, which consider the error of each neuron:
 
-$$\Delta^l_i = \frac{\partial C}{\partial z^l_i}$$
+$$\Delta^l_i = \frac{\partial C}{\partial z^l_i}\tag{b2}\label{b2}$$
 
 where $C$ is the cost function:
 
-$$C = \frac{1}{n}\sum_{x} f(y_i, a^L_i(x))\tag{b2}\label{b2}$$
+$$C = \frac{1}{n}\sum_{x} f(y_i, a^L_i(x))$$
 
 where $f$ is a measure of distance between real value and prediction, $n$ is the sample size. Because we can exchange the order between summation and derivative, the derivative can be calculate one by one.
 
@@ -55,7 +55,7 @@ Form the equation$\eqref{b1}\eqref{b2}$, we infer
 
 $$
 \begin{aligned}
-\frac{\partial C}{\partial W^l_{ij}} =& \frac{\partial C}{\partial z^l_k} \frac{\partial z^l_k}{\partial W^l_ij} = \Delta^l_k \delta_{ki} a^{l-1}_j = \Delta^l_i a^{l-1}_j \\
+\frac{\partial C}{\partial W^l_{ij}} =& \frac{\partial C}{\partial z^l_k} \frac{\partial z^l_k}{\partial W^l_{ij}} = \Delta^l_k \delta_{ki} a^{l-1}_j = \Delta^l_i a^{l-1}_j \\
 \frac{\partial C}{\partial b^l_i} =& \frac{\partial C}{\partial z^l_j} \frac{\partial z^l_j}{\partial b^l_i} = \Delta^l_j \delta_{ji} = \Delta^l_i
 \end{aligned}
 \tag{3}\label{3}
