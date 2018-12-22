@@ -2,20 +2,18 @@
 layout: post
 mathjax: true
 author: Long
-title:  "The derivation of back propagation equation"
+title:  "Derivation of back propagation equation"
 ---
 
-Following the Nielsen's book--["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/), I wrote a [feedforward neural network](https://github.com/wangl-cc/NeuralNetwork.jl) with julia to recognize handwritten digits in MNIST data, where I use the pkg--[JuliaDiff/ForwardDiff.jl](https://github.com/JuliaDiff/ForwardDiff.jl) to support different loss function but it doesn't work on activation function because there are something wrong to calculate the derivative of sigmoid function. Here I'd like to share my The derivation of back propagation equation. All formulas in this article follow Einstein summation convention, which means that any repeated indices except $l$ implies summation of that term over all the values of the index.
+Following the Nielsen's book--["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/), I wrote a [feedforward neural network](https://github.com/wangl-cc/NeuralNetwork.jl) with julia to recognize handwritten digits in MNIST data, where I use the pkg--[JuliaDiff/ForwardDiff.jl](https://github.com/JuliaDiff/ForwardDiff.jl) to support different loss function but it doesn't work on activation function because there are something wrong to calculate the derivative of sigmoid function. Here I'd like to share my derivation of back propagation equation. All tensor(vector ,matrix and any other tensor of higher rank)in this article follow the [Einstein summation convention](https://en.wikipedia.org/wiki/Einstein_notation), which means that any repeated indices except $l$(which not means a rank in our tensor but its label) implies summation of that term over all the values of the index ,and the $\delta_{ij}$ is a tensor we called [Kronecker delta](https://en.wikipedia.org/wiki/Kronecker_delta) which have properties:$\frac{\partial x_j}{\partial y_i} = \delta_{ij}= \delta_{ij}$ and $\delta_{ij}x_j = \delta_i$.
 
 What is an neural network? Instead of the author of "NNDL" who think the network as a gate circuit, in my opinion the network is a series of linear regression:
 
-$$a^l_i = \sigma(W^l_{ij} a^{l-1}_j + b^l_i).$$
+$$a^l_i = \sigma(W^l_{ij} a^{l-1}_j + b^l_i).\tag{b0}\label{b0}$$
 
 The main different between neural network and linear regression is the activation function, which I think is the reason why neural network is neural network.
 
-The mathematics about neural network itself is easy, so  I'd like to talk more about the mathematics of back propagation algorithm.
-
-However, the former equation can describe the FNN, for latter discussion about back propagation I divide the equation into two part:
+The equation "\eqref{b0}" is an elegant equation, but for convenience of following discussion I divide it into two part:
 
 $$
 \begin{aligned}
@@ -25,7 +23,7 @@ $$
 \tag{b1}\label{b1}
 $$
 
-The $a^l_i$ is the output of $l$th layer's $i$th neuron and the $z^l_i$ is the input.
+The $a^l_i$ is the output of $l$th layer's $i$th neuron and the $z^l_i$ is its input.
 
 In the training of network, how to calculate the gradient of $W$ and $b$ is difficult problem. One of the solutions called back propagation algorithm, which consider the error of each neuron:
 
@@ -35,7 +33,7 @@ where $C$ is the cost function:
 
 $$C = \frac{1}{n}\sum_{x} f(y_i, a^L_i(x))$$
 
-where $f$ is a measure of distance between real value and prediction, $n$ is the sample size. Because we can exchange the order between summation and derivative, the derivative can be calculate one by one.
+where $f$ is a measure of distance between real value and prediction, $n$ is the sample size.
 
 For $L$th layer,
 
