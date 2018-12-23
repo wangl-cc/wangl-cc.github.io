@@ -11,9 +11,13 @@ logo: /assets/logo.png
 # social links
 github_username:  wangl-cc
 
+paginate: 5
+paginate_path: "/post/page:num/"
+
 show_excerpts: false # set to false to remove excerpts on the homepage
 
 markdown: kramdown
 
 plugins:
  - jekyll-seo-tag
+ - jekyll-paginate
