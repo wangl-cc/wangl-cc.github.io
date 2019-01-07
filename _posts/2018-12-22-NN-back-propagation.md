@@ -59,4 +59,4 @@ $$
 \tag{3}\label{3}
 $$
 
-With the four equation $\eqref{1}$, $\eqref{2}$, $\ref{3}$, we can calculate the gradient of $W$ and $b$. In the equation $\eqref{3}$, we can see the degree of freedom is overrated. This is why the back propagation algorithm is a fast algorithm.
+With the four equation $\eqref{1}$, $\eqref{2}$, $\eqref{3}$, we can calculate the gradient of $W$ and $b$. In the equation $\eqref{3}$, we can see the degree of freedom is overrated. This is why the back propagation algorithm is a fast algorithm.
