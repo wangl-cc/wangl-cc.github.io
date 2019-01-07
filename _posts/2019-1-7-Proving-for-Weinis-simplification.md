@@ -10,7 +10,7 @@ $$
 P_i = \frac{v_i}{\sum_j vj}
 $$
 
-where $v_i$ ij the "reaction rate" of "reaction" $i$, $P_i$ is the probability the "reaction" $i$ being chosen.
+where $v_i$ is the "reaction rate" of "reaction" $i$, $P_i$ is the probability the "reaction" $i$ being chosen.
 
 ## proving
 
