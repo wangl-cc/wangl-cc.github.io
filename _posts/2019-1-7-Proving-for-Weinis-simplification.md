@@ -34,8 +34,8 @@ So, the probability of $i$ being chosen can be calculated by integrating over $\
 
 $$
 \begin{aligned}
-    P_i &= \int_0^1 e^{-\tau \sum_{j \neq i} v_j} d F_i = v_i \int_0^{\infty} e^{-\tau \sum_{j \neq i} v_j} e^{-\tau v_i} d\tau\\
-    &=v_i \int_0^{\infty} e^{-\tau \sum_{j} v_j} d\tau = \frac{v_i}{\sum_j v_j}
+    P_i &= \int_0^1 e^{-\tau \sum_{j \neq i} v_j} d F_i = -v_i \int_0^{\infty} e^{-\tau \sum_{j \neq i} v_j} e^{-\tau v_i} d\tau\\
+    &=-v_i \int_0^{\infty} e^{-\tau \sum_{j} v_j} d\tau = \frac{v_i}{\sum_j v_j}
 \end{aligned}
 $$
 
