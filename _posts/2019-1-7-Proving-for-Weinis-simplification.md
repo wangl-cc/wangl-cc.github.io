@@ -28,7 +28,7 @@ $$
 
 A "reaction" $i$  with "time" $\tau$ is chosen means that all the other "reaction time" is larger than $\tau$, the probability of which is
 
-$$\prod_{j \neq i}(1-F_i(\tau))=\prod_{j \neq i} e^{-\tau v_j} = e^{-\tau \sum_{j \neq i} v_j}$$
+$$\prod_{j \neq i}(1-F_j(\tau))=\prod_{j \neq i} e^{-\tau v_j} = e^{-\tau \sum_{j \neq i} v_j}$$
 
 So, the probability of $i$ being chosen can be calculated by integrating over $\tau$
 
