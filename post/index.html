@@ -3,8 +3,7 @@ layout: default
 list_title: Posts List
 ---
 
-<h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-<h3 class="page_number">{{ paginator.page }} of {{ paginator.total_pages }}</h3>
+<h2 class="post-list-heading">{{ page.list_title | default: "Posts" }} ({{ paginator.page }}/{{ paginator.total_pages }})</h2>
 <ul class="post-list">
   {%- for post in paginator.posts -%}
   <li>
@@ -28,12 +27,8 @@ list_title: Posts List
   <a href="{{ paginator.previous_page_path }}" class="previous">
     Previous
   </a>
-  {% else %}
-  <span class="previous">No Previous</span>
   {% endif %}
   {% if paginator.next_page %}
   <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-  {% else %}
-  <span class="next ">No Next</span>
   {% endif %}
 </div>
