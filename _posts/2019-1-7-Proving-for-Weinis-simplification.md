@@ -10,7 +10,7 @@ $$
 P_i = \frac{v_i}{\sum_j vj}
 $$
 
-where $v_i$ ij the "reaction rate" of "reaction" $i$, $P_i$ is the probability the "reaction" $i$ being chosen.
+where $v_i$ is the "reaction rate" of "reaction" $i$, $P_i$ is the probability the "reaction" $i$ being chosen.
 
 ## proving
 
@@ -20,7 +20,7 @@ $$
 \tau_i = -\frac{log(r)}{v_i}
 $$
 
-where $r$ is a $(0,1)$ uniformly distributed random variable, such that we get the distribution of $\tau$
+where $r$ is a $[0,1]$ uniformly distributed random variable, such that we get the distribution of $\tau$
 
 $$
 F_i(\tau) = 1 - e^{-\tau v_i}.
@@ -28,7 +28,7 @@ $$
 
 A "reaction" $i$  with "time" $\tau$ is chosen means that all the other "reaction time" is larger than $\tau$, the probability of which is
 
-$$\prod_{j \neq i}(1-F_j(\tau))=\prod_{j \neq i} e^{-\tau v_j} = e^{-\tau \sum_{j \neq i} v_j}$$
+$$\prod_{j \neq i}(1-F_j(\tau))=\prod_{j \neq i} e^{-\tau v_j} = e^{-\tau \sum_{j \neq i} v_j}.$$
 
 So, the probability of $i$ being chosen can be calculated by integrating over $\tau$
 
