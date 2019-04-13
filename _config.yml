@@ -1,8 +1,8 @@
-title: Long's github blog
+title: Homepage of Long
 author: Long Wang
-email: wangl-cc@outlook.com
+email: wangl.cc@outlook.com
 description: >
-  A website belongs to long for sharing some ideas.
+  A website belongs to Long for sharing some ideas.
   Thanks for your visit.
 
 url: wangl-cc.github.io
@@ -14,10 +14,11 @@ github_username:  wangl-cc
 paginate: 5
 paginate_path: "/post/page:num/"
 
-show_excerpts: false # set to false to remove excerpts on the homepage
+show_excerpts: false
 
 markdown: kramdown
 
 plugins:
  - jekyll-seo-tag
  - jekyll-paginate
+
