@@ -14,8 +14,6 @@ Interests:
 * Evolutionary modelling
 * Mathematics
   * Stochastic progress
-  * Algebra
-  * Geometry
 * CS
   * Machine learning
   * Julia Language
