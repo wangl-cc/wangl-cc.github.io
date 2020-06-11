@@ -2,13 +2,13 @@ title: Homepage of Long Wang
 author: Long Wang
 email: wangl.cc@outlook.com
 description: >
-  A website belongs to Long for sharing some ideas.
+  A website belongs to Long Wang for sharing some ideas.
   Thanks for your visit.
 
 url: wangl-cc.github.io
 
 # social links
-github_username:  wangl-cc
+github_username: wangl-cc
 
 paginate: 5
 paginate_path: "/post/page:num/"
@@ -21,3 +21,4 @@ plugins:
  - jekyll-seo-tag
  - jekyll-paginate
 
+ # vim:ts=2:sw=2:tw=76

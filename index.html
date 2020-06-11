@@ -4,6 +4,7 @@ mathjax: true
 list_title: Recent Posts
 ---
 
+<!-- Title begin -->
 <div class="home">
   {%- if page.title -%}
   <h1 class="page-heading">
@@ -11,7 +12,9 @@ list_title: Recent Posts
   </h1>
   {%- endif -%}
 </div>
+<!-- Title end -->
 
+<!-- Recent posts begin-->
 <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
 <ul class="post-list">
   {%- for post in site.posts limit:3 -%}
@@ -27,3 +30,4 @@ list_title: Recent Posts
   </li>
   {%- endfor -%}
 </ul>
+<!-- Recent posts end -->

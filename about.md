@@ -3,21 +3,21 @@ layout: page
 title: About me
 ---
 
-Long Wang
+**Long Wang**
 
-Undergraduate at School of life science, Sun Yat-sen University
+E-mail: <wangl.cc@outlook.com>
 
-Major: Biology
+Ecology graduate at school of life science, Sun Yat-sen University.
 
-Interests:
+Research Interests:
 
-* Evolutionary modelling
-* Mathematics
-  * Stochastic progress
-* CS
-  * Machine learning
-  * Julia Language
+* Probability and stochastic process.
+* Stochastic model of evolution.
 
-Current work:
+Current works:
 
 * Modelling the evolution of pathogen virulence
+
+<!--
+vim:spell:spl=en:tw=76
+-->
