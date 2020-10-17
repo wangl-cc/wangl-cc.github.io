@@ -1,14 +1,31 @@
 title: Homepage of Loong
-author: 'Long "Loong" Wang'
-email: wangl.cc@outlook.com
+url: wangl-cc.github.io
+license: >
+  <a rel="license"
+  href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative
+  Commons License" style="border-width:0"
+  src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This
+  work is licensed under a <a rel="license"
+  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+  Attribution-ShareAlike 4.0 International License</a>.
+
 description: >
   A website belongs to Long Wang for sharing some ideas.
   Thanks for your visit.
 
-url: wangl-cc.github.io
+author:
+  name: Long Wang
+  email: wangl.cc@outlook.com
+  description: |
+    Graduate student, Sun Yat-sen University.
+    
+    Interests:
+      * Probability and stochastic process,
+      * Programing language
+    
 
-# social links
-github_username: wangl-cc
+social_links:
+  github: wangl-cc
 
 paginate: 5
 paginate_path: "/post/page:num/"
@@ -21,4 +38,4 @@ plugins:
  - jekyll-seo-tag
  - jekyll-paginate
 
- # vim:ts=2:sw=2:tw=76
+# vim:ts=2:sw=2:tw=76

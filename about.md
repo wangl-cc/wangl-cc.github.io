@@ -1,23 +1,32 @@
 ---
-layout: page
+layout: default
 title: About me
 ---
 
-**Long Wang**
+<!-- Title begin -->
+<div class="home">
+  {%- if page.title -%}
+  <h1 class="page-heading">
+    {{ page.title }}
+  </h1>
+  {%- endif -%}
+</div>
+<!-- Title end -->
 
-E-mail: <wangl.cc@outlook.com>
+{%- if site.author.name -%}
+<h3>{{ site.author.name | escape }}</h3>
+{%- endif -%}
 
-Ecology graduate at school of life science, Sun Yat-sen University.
+{%- if site.author.email -%}
+<p>
+Email: <a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+</p>
+{%- endif -%}
 
-Research Interests:
-
-* Probability and stochastic process.
-* Stochastic model of evolution.
-
-Current works:
-
-* Modelling the evolution of pathogen virulence
+{%- if site.author.description -%}
+  {{ site.author.description | escape }}
+{%- endif -%}
 
 <!--
-vim:spell:spl=en:tw=76
+vim:ts=2:sw=2:tw=76
 -->
