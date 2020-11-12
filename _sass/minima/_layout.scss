@@ -3,7 +3,6 @@
  */
 @media (prefers-color-scheme: light) {
   .site-header {
-    border-top: 5px solid getcolor("border-color-03", true);
     border-bottom: 1px solid getcolor("border-color-01", true);
     min-height: $spacing-unit * 1.865;
     line-height: $base-line-height * $base-font-size * 2.25;
@@ -15,7 +14,6 @@
 
 @media (prefers-color-scheme: dark) {
   .site-header {
-    border-top: 5px solid getcolor("border-color-03", false);
     border-bottom: 1px solid getcolor("border-color-01", false);
     min-height: $spacing-unit * 1.865;
     line-height: $base-line-height * $base-font-size * 2.25;
