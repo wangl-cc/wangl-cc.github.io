@@ -259,11 +259,21 @@ pre {
 
 .highlight {
   border-radius: 3px;
-  background: getcolor("code-background-color", true);
+  @media (prefers-color-scheme: light) {
+    background: getcolor("code-background-color", true);
+  }
+  @media (prefers-color-scheme: dark) {
+    background: getcolor("code-background-color", false);
+  }
   @extend %vertical-rhythm;
 
   .highlighter-rouge & {
-    background: getcolor("code-background-color", true);
+    @media (prefers-color-scheme: light) {
+      background: getcolor("code-background-color", true);
+    }
+    @media (prefers-color-scheme: dark) {
+      background: getcolor("code-background-color", false);
+    }
   }
 }
 
