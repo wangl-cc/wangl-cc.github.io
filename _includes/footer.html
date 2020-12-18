@@ -9,13 +9,22 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
+          <h4>
           <li class="p-name">
             {%- if site.author.name -%}
-            {{ site.author.name | escape }}
+              {{ site.author.name | escape }}
             {%- endif -%}
           </li>
+
           {%- if site.author.email -%}
-          <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+            <li><a class="u-email" href="mailto:{{ site.author.email }}">
+              {{ site.author.email }}
+            </a></li>
+          {%- endif -%}
+          </h4>
+
+          {%- if site.author.description -%}
+            <li>{{ site.author.description | escape }}</li>
           {%- endif -%}
         </ul>
       </div>
@@ -23,7 +32,7 @@
       <div class="footer-col footer-col-2">
         <p style="text-align:center">
           {{%- if site.license -%}}
-          {{ site.license }}
+            {{ site.license }}
           {{%- endif -%}}
         </p>
       </div>

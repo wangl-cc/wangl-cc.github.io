@@ -1,3 +1,4 @@
+# website configs
 title: Homepage of Loong
 url: wangl-cc.github.io
 license: >
@@ -13,19 +14,21 @@ description: >
   A website belongs to Long Wang for sharing some ideas.
   Thanks for your visit.
 
+# author configs
 author:
   name: Long Wang
   email: wangl.cc@outlook.com
+  social_links:
+    github: wangl-cc
   description: |
-    Master student of theorical evolutionary biology in Sun Yat-sen University.
+    Master student of theoretical evolutionary biology in Sun Yat-sen University.
 
-social_links:
-  github: wangl-cc
 
+# Other options
 paginate: 5
 paginate_path: "/post/page:num/"
 
-show_excerpts: false
+show_excerpts: true
 
 markdown: kramdown
 
@@ -33,4 +36,4 @@ plugins:
  - jekyll-seo-tag
  - jekyll-paginate
 
-# vim:ts=2:sw=2:tw=74
+# vim:ts=2:sw=2
