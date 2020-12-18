@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   .highlight {
     .c     { color: #998; font-style: italic } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error
@@ -64,7 +64,7 @@
   }
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   .highlight {
     .c     { color: #545454; font-style: italic } // Comment
     .err   { color: #f07178; background-color: #e3d2d2 } // Error
