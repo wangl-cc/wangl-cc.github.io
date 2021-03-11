@@ -11,41 +11,56 @@
         <ul class="contact-list">
           <h4>
           <li class="p-name">
-            {%- if site.author.name -%}
+            {% if site.author.name %}
               {{ site.author.name | escape }}
-            {%- endif -%}
+            {% endif %}
           </li>
 
-          {%- if site.author.email -%}
+          {% if site.author.email %}
             <li><a class="u-email" href="mailto:{{ site.author.email }}">
               {{ site.author.email }}
             </a></li>
-          {%- endif -%}
+          {% endif %}
           </h4>
 
-          {%- if site.author.description -%}
+          {% if site.author.description %}
             <li>{{ site.author.description | escape }}</li>
-          {%- endif -%}
+          {% endif %}
         </ul>
       </div>
 
       <div class="footer-col footer-col-2">
         <p style="text-align:center">
-          {{%- if site.license -%}}
-            {{ site.license }}
-          {{%- endif -%}}
+          {% if page.license %}
+            {% assign license = page.license %}
+          {% elsif site.license %}
+            {% assign license = site.license %}
+          {% endif %}
+          {% if license %}
+            <a rel="license"
+              href="http://creativecommons.org/licenses/{{ license | escape }}/4.0/">
+              <img alt="Creative Commons License" style="border-width:0"
+                src={{ "/assets/image/cc-license/" | append: license | append: ".svg" | escape | relative_url }}
+              />
+            </a><br />
+            This work is licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/{{ license | escape }}/4.0/">
+              Creative Commons {{ license | upcase }} 4.0 International License
+            </a>.
+          {% endif %}
         </p>
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
+        <p>{{ site.description | escape }}</p>
       </div>
     </div>
     
     <div class="social-links">
-      {%- include social.html -%}
+      {% include social.html %}
     </div>
 
   </div>
 
 </footer>
+<!-- vim: set sw=2 ts=2: -->

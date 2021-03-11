@@ -7,7 +7,10 @@ This is my blog repository based on
 ## Main differences
 
 * Change some layouts. See the link of this website.
-* Support LaTeX in markdown by MathJax, which is not enable by default.
-  Add `mathjax: true` to page option to enable. 
-* Automatically switch mode between light and dark by a media query.
 * Change some options. See `_config.yaml` file.
+* Support LaTeX in markdown by MathJax, which is not enable by default.
+  Add `mathjax: true` to page option to enable.
+* Pin posts at home. Add `pin: true` to page option to pin a post.
+* Set license of page. Add `license: <your license>` in `_config.yaml`
+  for all pages, or in page option for the given page.
+* Automatically switch mode between light and dark by a media query.
