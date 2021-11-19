@@ -4,18 +4,19 @@ url: wangl-cc.github.io
 license: by-sa
 
 description: >
-  A website belongs to Long Wang for sharing some ideas.
-  Thanks for your visit.
+  A website belongs to Loong Wang for sharing some ideas.
+  Thanks for your visiting.
 
 # author configs
 author:
-  name: Long Wang
+  name: Loong Wang
   email: wangl.cc@outlook.com
   social_links:
     github: wangl-cc
     twitter: LoongWANG3
   description: |
-    Master student of theoretical evolutionary biology in Sun Yat-sen University.
+    Graduate student of theoretical evolutionary biology in SYSU, JuliaLang enthusiast.
+
 
 
 # Other options
